@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/sadayuki-matsuno/git-credential-substitute/internal"
-	"gopkg.in/urfave/cli.v2"
+	"github.com/urfave/cli/v2"
 )
 
 func main() {
