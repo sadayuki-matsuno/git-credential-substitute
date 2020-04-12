@@ -3,7 +3,7 @@ install:
 	@ go install $(PROJECT_ROOT)/*.go
 
 build:
-	@ go build -o $(PROJECT_ROOT)/bin/git-credential-substitute ./main.go 
+	@ go build
 
 test:
 	@ go test $(PROJECT_ROOT)/*.go

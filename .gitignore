@@ -28,3 +28,4 @@ pprof
 *.pdf
 
 realm_dump
+git-credential-substitute
