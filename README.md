@@ -28,7 +28,7 @@ go get -u github.com/sadayuki-matsuno/git-credential-substitute
 go get -u github.com/sadayuki-matsuno/git-credential-substitute
 ```
 
-- make .git-secret.json
+- make `.git-secret.json`
 
 ```
 cat $HOME/.git-secret.json
