@@ -19,4 +19,3 @@ jobs:
       with:
         version: latest
         args: release --rm-dist
-        key: ${{ secrets.TOKEN }}
