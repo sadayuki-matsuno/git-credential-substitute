@@ -64,5 +64,5 @@ func Action(c *cli.Context) error {
 		fmt.Printf("password=%s\n", secret.Password)
 		return nil
 	}
-	return nil
+	return errors.New("Failed to find default secret. see https://github.com/sadayuki-matsuno/git-credential-substitute")
 }

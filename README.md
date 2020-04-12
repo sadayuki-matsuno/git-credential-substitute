@@ -6,6 +6,10 @@ If you are using multiple github accounts, it uses the information of the organi
 
 # Installation
 
+Download from [release](https://github.com/sadayuki-matsuno/git-credential-substitute/releases)
+
+or 
+
 ```
 go get -u github.com/sadayuki-matsuno/git-credential-substitute
 ```
@@ -13,8 +17,8 @@ go get -u github.com/sadayuki-matsuno/git-credential-substitute
 # Features
 
 - Store credentials for each github organization and use the appropriate credentials
-- If you're in the git directory, it will determine the credential based on the organization information in the origin and use it.
 - If not applicable to any organization, the default credentials are used.
+- If you're in the git directory, it will determine the credential based on the organization information in the origin and use it.
 
 # Quick Start
 
@@ -65,4 +69,4 @@ To check which directory uses which credentials, try running `git-credential-sub
 
 # Author
 
-sadayuki-matsuno
+[sadayuki-matsuno](https://github.com/sadayuki-matsuno)
