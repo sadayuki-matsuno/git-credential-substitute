@@ -71,9 +71,25 @@ git config --system --show-origin --get credential.helper
 
 - All settings are complete. All that's left to do is to use the git command as usual
 
+# Usage
+
+- git clone
+    - Since the current direcotry is judged by the credential information, create a directory with the name of organization when you do git clone.
+
+```
+mkdir `${organization_name}`
+cd `${organization_name}`
+git clone https://github.com/${organization_name}/xxxx
+```
+
+- other git command
+    - If you're in the git directory, your credentials are automatically determined using the organization of the origin
+
 # Debug
 
-To check which directory uses which credentials, try running `git-credential-substitute` in the target directory.
+- To check which directory uses which credentials, try running `git-credential-substitute` in the target directory.
+- Putting `GIT_CURL_VERBOSE=1` at the beginning of git command 
+    - ex.  `GIT_CURL_VERBOSE=1 git clone xxx/xxxx`
 
 # Author
 
