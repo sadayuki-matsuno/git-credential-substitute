@@ -40,9 +40,9 @@ func Action(c *cli.Context) error {
 		gitOrgName = path.Base(path.Dir(string(gitURL)))
 	}
 
-	gitSecretReader, err := os.Open(filepath.Join(home, ".git-secret.json"))
+	gitSecretReader, err := os.Open(filepath.Join(home, "$HOME/.git-secret.json"))
 	if err != nil {
-		return errors.New(".git-secret.json no found")
+		return errors.New(".git-secret.json not found")
 	}
 	defer gitSecretReader.Close()
 
@@ -64,5 +64,5 @@ func Action(c *cli.Context) error {
 		fmt.Printf("password=%s\n", secret.Password)
 		return nil
 	}
-	return errors.New("Failed to find default secret. see https://github.com/sadayuki-matsuno/git-credential-substitute")
+	return errors.New("Failed to find the default credential. see https://github.com/sadayuki-matsuno/git-credential-substitute")
 }

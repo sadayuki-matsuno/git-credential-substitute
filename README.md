@@ -20,6 +20,10 @@ go get -u github.com/sadayuki-matsuno/git-credential-substitute
 - If not applicable to any organization, the default credentials are used.
 - If you're in the git directory, it will determine the credential based on the organization information in the origin and use it.
 
+# Cation
+
+- You can't use this `git-helper-substitute` with the `osxkeychain`. You should disable all settings of the `osxkeychain`.
+
 # Quick Start
 
 - install git-credential-substitute
@@ -51,7 +55,7 @@ cat $HOME/.git-secret.json
 git config --global credential.helper substitute
 ```
 
-- check your git-credential-healper
+- check your git-credential-healper and disable `osxkeychain`
 
 ```
 git config --show-origin --get credential.helper
@@ -59,7 +63,11 @@ git config --show-origin --get credential.helper
 file:$HOME/.gitconfig    substitute
 ```
 
-**If you see other helpers, you need to remove their settings or they may not work properly.**
+```
+git config --system --show-origin --get credential.helper
+```
+
+**If you see osxkeychain, you need to remove their settings or they may not work properly.**
 
 - All settings are complete. All that's left to do is to use the git command as usual
 
