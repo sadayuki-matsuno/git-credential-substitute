@@ -4,6 +4,8 @@ git credential helper, which switches git credentials for the username/organizat
 
 If you are using multiple github accounts, it uses the information of the organization to determine the authentication information.
 
+[日本語記事](https://qiita.com/sadayuki-matsuno/items/8df9469d2914078827b4)
+
 # Installation
 
 Download from [release](https://github.com/sadayuki-matsuno/git-credential-substitute/releases)
@@ -74,7 +76,7 @@ git config --system --show-origin --get credential.helper
 # Usage
 
 - git clone
-    - Since the current direcotry is judged by the credential information, create a directory with the name of organization when you do git clone.
+    - Because the current directory is used to determine the credential information, when you do `git clone`, create a directory of the organization name first, and then `git clone` in the directory.
 
 ```
 mkdir `${organization_name}`
