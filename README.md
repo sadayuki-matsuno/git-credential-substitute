@@ -12,13 +12,23 @@ If you are using multiple github accounts, it uses the information of the organi
 
 # Installation
 
-Download from [release](https://github.com/sadayuki-matsuno/git-credential-substitute/releases)
+- macOS
 
-or 
+```
+brew tap sadayuki-matsuno/git-credential-substitute
+brew install git-credential-substitute
+```
+
+- golang
 
 ```
 go get -u github.com/sadayuki-matsuno/git-credential-substitute
 ```
+
+- binary
+
+Download from [release](https://github.com/sadayuki-matsuno/git-credential-substitute/releases)
+
 
 # Features
 
