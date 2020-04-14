@@ -55,6 +55,14 @@ cat $HOME/.git-secret.json
 }
 ```
 
+- make sure the git-credential-substitute works
+
+```
+git-credential-substitute
+
+It's working fine.
+```
+
 - change git-credential-helper
 
 ```
