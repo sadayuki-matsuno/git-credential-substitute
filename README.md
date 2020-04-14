@@ -6,6 +6,10 @@ If you are using multiple github accounts, it uses the information of the organi
 
 [日本語記事](https://qiita.com/sadayuki-matsuno/items/8df9469d2914078827b4)
 
+# Dependency
+
+- go version: < 1.13
+
 # Installation
 
 Download from [release](https://github.com/sadayuki-matsuno/git-credential-substitute/releases)
@@ -34,7 +38,7 @@ go get -u github.com/sadayuki-matsuno/git-credential-substitute
 go get -u github.com/sadayuki-matsuno/git-credential-substitute
 ```
 
-- make `.git-secret.json`
+- make `$HOME/.git-secret.json`
 
 ```
 cat $HOME/.git-secret.json

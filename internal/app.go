@@ -12,7 +12,10 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-var defaultKey = "default"
+var (
+	defaultKey     = "default"
+	secretFileName = ".git-secret.json"
+)
 
 // Secret :
 type Secret struct {
@@ -40,9 +43,9 @@ func Action(c *cli.Context) error {
 		gitOrgName = path.Base(path.Dir(string(gitURL)))
 	}
 
-	gitSecretReader, err := os.Open(filepath.Join(home, ".git-secret.json"))
+	gitSecretReader, err := os.Open(filepath.Join(home, secretFileName))
 	if err != nil {
-		return errors.New("$HOME/.git-secret.json not found")
+		return fmt.Errorf("$HOME/%s not found", secretFileName)
 	}
 	defer gitSecretReader.Close()
 
@@ -51,18 +54,24 @@ func Action(c *cli.Context) error {
 		return err
 	}
 
-	var secret Secret
-	var ok bool
-	if secret, ok = gitSecret[gitOrgName]; ok {
-		fmt.Printf("username=%s\n", secret.Username)
-		fmt.Printf("password=%s\n", secret.Password)
-		return nil
-	}
+	switch c.Args().Get(0) {
+	case "get":
+		var secret Secret
+		var ok bool
+		if secret, ok = gitSecret[gitOrgName]; ok {
+			fmt.Printf("username=%s\n", secret.Username)
+			fmt.Printf("password=%s\n", secret.Password)
+			return nil
+		}
 
-	if secret, ok = gitSecret[defaultKey]; ok {
-		fmt.Printf("username=%s\n", secret.Username)
-		fmt.Printf("password=%s\n", secret.Password)
+		if secret, ok = gitSecret[defaultKey]; ok {
+			fmt.Printf("username=%s\n", secret.Username)
+			fmt.Printf("password=%s\n", secret.Password)
+			return nil
+		}
+		return errors.New("Failed to find the default credential. see https://github.com/sadayuki-matsuno/git-credential-substitute")
+	default:
+		fmt.Println("It's working fine.")
 		return nil
 	}
-	return errors.New("Failed to find the default credential. see https://github.com/sadayuki-matsuno/git-credential-substitute")
 }
