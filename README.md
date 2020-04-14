@@ -22,7 +22,7 @@ go get -u github.com/sadayuki-matsuno/git-credential-substitute
 - If not applicable to any organization, the default credentials are used.
 - If you're in the git directory, it will determine the credential based on the organization information in the origin and use it.
 
-# Cation
+# Caution
 
 - You can't use this `git-helper-substitute` with the `osxkeychain`. You should disable all settings of the `osxkeychain`.
 
