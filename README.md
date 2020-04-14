@@ -63,13 +63,19 @@ git-credential-substitute
 It's working fine.
 ```
 
+- check current git-credential-helper setting
+
+```
+git config --show-origin --get credential.helper
+```
+
 - change git-credential-helper
 
 ```
 git config --global credential.helper substitute
 ```
 
-- check your git-credential-healper and disable `osxkeychain`
+- check that it has been changed
 
 ```
 git config --show-origin --get credential.helper
@@ -82,6 +88,12 @@ git config --system --show-origin --get credential.helper
 ```
 
 **If you see osxkeychain, you need to remove their settings or they may not work properly.**
+
+- removing git-credential-helper set in sysytem
+
+```
+git config --system --unset credential.helper
+```
 
 - All settings are complete. All that's left to do is to use the git command as usual
 
