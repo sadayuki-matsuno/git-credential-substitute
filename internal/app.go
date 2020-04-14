@@ -40,9 +40,9 @@ func Action(c *cli.Context) error {
 		gitOrgName = path.Base(path.Dir(string(gitURL)))
 	}
 
-	gitSecretReader, err := os.Open(filepath.Join(home, "$HOME/.git-secret.json"))
+	gitSecretReader, err := os.Open(filepath.Join(home, ".git-secret.json"))
 	if err != nil {
-		return errors.New(".git-secret.json not found")
+		return errors.New("$HOME/.git-secret.json not found")
 	}
 	defer gitSecretReader.Close()
 
