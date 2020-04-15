@@ -1,6 +1,6 @@
 # git-helper-substitute
 
-git credential helper, switching between multiple organizations.
+git credential helper, switching git credentials between multiple organizations
 
 If you are using multiple github accounts, it uses the information of the organization to determine the authentication information.
 
