@@ -36,8 +36,8 @@ func Action(c *cli.Context) error {
 	}
 
 	var gitOrgName string
-	gitURL, _ := exec.Command("git", "config", "--get", "remote.origin.url").Output()
-	if len(gitURL) == 0 {
+	gitURL, err := exec.Command("git", "config", "--get", "remote.origin.url").Output()
+	if err != nil || len(gitURL) == 0 {
 		gitOrgName = path.Base(pwd)
 	} else {
 		gitOrgName = path.Base(path.Dir(string(gitURL)))
