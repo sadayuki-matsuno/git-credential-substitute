@@ -6,7 +6,7 @@ builds:
     binary: git-credential-substitute
     ldflags:
       - -s -w
-      - -X main.Version={{.Version}}
+      - -X main.version={{.Version}}
     env:
       - CGO_ENABLED=0
     goos:

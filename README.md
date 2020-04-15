@@ -8,9 +8,10 @@ If you are using multiple github accounts, it uses the information of the organi
 
 [日本語記事](https://qiita.com/sadayuki-matsuno/items/8df9469d2914078827b4)
 
+
 # Dependency
 
-- go version: < 1.13
+- go version requires 1.13 or higher.
 
 # Installation
 
